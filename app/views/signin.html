@@ -1,0 +1,46 @@
+
+<div class="container">
+
+  <div class="panel-body login_screen" >
+    <img src="images/logo.png">
+   <form role="form">
+   <div class="alert alert-warning">
+              Enter Username and Password!
+            </div>
+  <div style="margin-bottom: 12px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input id="login-username" type="text" ng-model="user.username" class="form-control" name="username" value="" placeholder="username or email" required>
+                                    </div>
+
+                            <div style="margin-bottom: 12px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="login-password" type="password" ng-model="user.password" class="form-control" name="password" placeholder="password" required>
+                                    </div>
+
+                                    <div class="input-group">
+                                      <div class="checkbox" style="margin-top: 0px;">
+                                        <label>
+                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                                        </label>
+                                      </div>
+                                    </div>
+
+  <button type="submit" class="btn btn-success" ng-click="login(user)" >Sign in</button>
+
+  <hr style="margin-top:10px;margin-bottom:10px;" >
+
+  <div class="form-group">
+
+                                        <div style="font-size:85%">
+                                            Don't have an account!
+                                        <a href="#">
+                                            Sign Up Here
+                                        </a>
+                                        </div>
+
+                                </div>
+</form>
+  </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <!-- uncomment code for absolute positioning tweek see top comment in css -->
+    <!-- <div class="absolute-wrapper"> </div> -->
+    <!-- Menu -->
+
+    <div ng-include="'views/left-nav.html'"></div>
+    <!-- Main Content -->
+    <div class="container-fluid">
+      <div class="side-body">
+        <div class="top">
+          <div class="col-lg-6 col-sm-6 col-xs-12 col-xxs-12">
+            <div class="smallstat">
+              <i class="glyphicon glyphicon-piggy-bank success"></i>
+              <span class="value text-success">UGX {{savingStatus.amount | number}}</span>
+              <span class="title">Savings</span>
+            </div><!--/.smallstat-->
+          </div>
+
+          <div class="col-lg-6 col-sm-6 col-xs-12 col-xxs-12">
+            <div class="smallstat">
+              <i class="glyphicon glyphicon-equalizer danger"></i>
+              <span class="value text-danger">UGX {{total_share_value.amount | number}}</span>
+              <span class="title">Shares</span>
+            </div><!--/.smallstat-->
+          </div>
+
+          <div class="col-lg-6 col-sm-6 col-xs-12 col-xxs-12">
+            <div class="smallstat">
+              <i class="glyphicon glyphicon-plane warning"></i>
+              <span class="value text-warning">UGX {{100000 | number}}</span>
+              <span class="title">Loans</span>
+            </div><!--/.smallstat-->
+          </div>
+
+          <div class="col-lg-6 col-sm-6 col-xs-12 col-xxs-12">
+            <div class="smallstat">
+              <i class="glyphicon glyphicon-envelope primary"></i>
+              <span class="value text-primary">42</span>
+              <span class="title">Notifications</span>
+            </div><!--/.smallstat-->
+          </div>
+
+        </div>
+
+
+
+        <canvas id="bar" class="chart chart-bar"
+                chart-data="data" chart-labels="labels">
+        </canvas>
+
+      </div>
+    </div>
+  </div>
+</div>

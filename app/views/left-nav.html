@@ -1,0 +1,55 @@
+    <div class="side-menu" ng-controller="SidebarCtrl">
+
+    <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <div class="brand-wrapper">
+            <!-- Hamburger -->
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Brand -->
+            <div class="brand-name-wrapper">
+                <div class="media profile">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="images/avatar.png" alt="picture">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{user.first_name}} {{user.last_name}}</h4>
+   {{user.email}}
+  </div>
+</div>
+
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!-- Main Menu -->
+    <div class="side-menu-container">
+        <ul class="nav navbar-nav">
+
+
+            <li class="{{getActiveClass('/savings')}}"><a href="#/savings"><span class="glyphicon glyphicon-piggy-bank"></span> My Savings</a></li>
+            <li class="{{getActiveClass('/shares')}}"><a href="#/shares"><span class="glyphicon glyphicon-equalizer"></span> My Shares</a></li>
+            <li class="{{getActiveClass('/loans')}}"><a href="#/loans"><span class="glyphicon glyphicon glyphicon-plane"></span> Loans</a></li>
+            <li class="{{getActiveClass('/notifications')}}"><a href="#/notifications"><span class="glyphicon glyphicon-envelope"></span> Notifications <span class="label label-primary">42</span> </a></li>
+      		<li class="{{getActiveClass('/settings')}}"><a href="#/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+          <li ><a href="#/signin"><span class="glyphicon glyphicon-stop"></span> Logout</a></li>
+
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
+    </div>
