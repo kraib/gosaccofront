@@ -16,8 +16,8 @@
             <div class="brand-name-wrapper">
                 <div class="media profile">
   <div class="media-left">
-    <a href="#">
-      <img class="media-object" src="images/avatar.png" alt="picture">
+    <a href="#/">
+      <img class="media-object" ng-src= {{user.get_absolute_image_url}} alt="picture">
     </a>
   </div>
   <div class="media-body">
@@ -39,13 +39,12 @@
     <!-- Main Menu -->
     <div class="side-menu-container">
         <ul class="nav navbar-nav">
-
-
-            <li class="{{getActiveClass('/savings')}}"><a href="#/savings"><span class="glyphicon glyphicon-piggy-bank"></span> My Savings</a></li>
-            <li class="{{getActiveClass('/shares')}}"><a href="#/shares"><span class="glyphicon glyphicon-equalizer"></span> My Shares</a></li>
-            <li class="{{getActiveClass('/loans')}}"><a href="#/loans"><span class="glyphicon glyphicon glyphicon-plane"></span> Loans</a></li>
-            <li class="{{getActiveClass('/notifications')}}"><a href="#/notifications"><span class="glyphicon glyphicon-envelope"></span> Notifications <span class="label label-primary">42</span> </a></li>
-      		<li class="{{getActiveClass('/settings')}}"><a href="#/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+            <li class="{{getActiveClass('/')}}"><a ng-href="#/"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+            <li class="{{getActiveClass('/savings')}}"><a ng-href="#/savings"><span class="glyphicon glyphicon-piggy-bank"></span> My Savings</a></li>
+            <li class="{{getActiveClass('/shares')}}"><a ng-href="#/shares"><span class="glyphicon glyphicon-equalizer"></span> My Shares</a></li>
+            <li class="{{getActiveClass('/loans')}}"><a ng-href="#/loans"><span class="glyphicon glyphicon glyphicon-plane"></span> Loans</a></li>
+            <li class="{{getActiveClass('/notifications')}}"><a ng-href="#/notifications"><span class="glyphicon glyphicon-envelope"></span> Notifications <span class="label label-primary">42</span> </a></li>
+      		<li class="{{getActiveClass('/settings')}}"><a ng-href="#/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
           <li ><a href="#/signin"><span class="glyphicon glyphicon-stop"></span> Logout</a></li>
 
         </ul>

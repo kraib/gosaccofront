@@ -8,7 +8,7 @@
  * Controller of the gosaccov1App
  */
 angular.module('gosaccov1App')
-  .controller('MainCtrl', function ($scope,shares,savings) {
+  .controller('MainCtrl', function ($scope,shares,savings, loans) {
     shares.getTotalShareValue().then(function(total){
       $scope.total_share_value=total;
 
@@ -18,6 +18,15 @@ angular.module('gosaccov1App')
     });
     savings.getCurrentBalance().then(function(data){
       $scope.savingStatus=data.data[0];
+
+
+
+    },function(error){
+
+    });
+
+    loans.getLoanBalance().then(function(data){
+      $scope.loanStatus=data.data[0];
 
 
 

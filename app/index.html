@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
     <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
     <link rel="stylesheet" href="bower_components/angular-ui-notification/dist/angular-ui-notification.min.css" />
+    <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css" />
+    <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -26,7 +28,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
- 
+
     <div ng-view="">
 
     </div>
@@ -48,33 +50,35 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
     <script src="bower_components/a0-angular-storage/dist/angular-storage.js"></script>
-    <script src="bower_components/ngprogress/build/ngProgress.js"></script>
     <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
     <script src="bower_components/Chart.js/Chart.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
     <script src="bower_components/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
+    <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
+    <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/services/authentication.js"></script>
-        <script src="scripts/services/webserver.js"></script>
-        <script src="scripts/controllers/signin.js"></script>
-        <script src="scripts/controllers/savings.js"></script>
         <script src="scripts/services/savings.js"></script>
         <script src="scripts/services/routeaccessfilter.js"></script>
         <script src="scripts/services/application.js"></script>
-       
+        <script src="scripts/services/authentication.js"></script>
+        <script src="scripts/services/webserver.js"></script>
+        <script src="scripts/services/shares.js"></script>
+        <script src="scripts/services/loans.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/signin.js"></script>
+        <script src="scripts/controllers/savings.js"></script>
         <script src="scripts/controllers/loading.js"></script>
         <script src="scripts/controllers/sidebar.js"></script>
         <script src="scripts/controllers/shares.js"></script>
         <script src="scripts/controllers/loans.js"></script>
         <script src="scripts/controllers/settings.js"></script>
         <script src="scripts/controllers/notifications.js"></script>
-        <script src="scripts/services/shares.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>

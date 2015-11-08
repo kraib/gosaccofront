@@ -20,7 +20,9 @@ angular
     'angular-storage',
     'angular-loading-bar',
     'chart.js',
-    'ui-notification'
+    'ui-notification',
+    'ngDialog',
+    'angularUtils.directives.dirPagination'
   ])
   .config(function ($routeProvider) {
     $routeProvider

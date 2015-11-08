@@ -33,11 +33,12 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/angular-jwt/dist/angular-jwt.js',
       'bower_components/a0-angular-storage/dist/angular-storage.js',
-      'bower_components/ngprogress/build/ngProgress.js',
       'bower_components/angular-loading-bar/build/loading-bar.js',
       'bower_components/Chart.js/Chart.js',
       'bower_components/angular-chart.js/dist/angular-chart.js',
       'bower_components/angular-ui-notification/dist/angular-ui-notification.min.js',
+      'bower_components/ng-dialog/js/ngDialog.js',
+      'bower_components/angularUtils-pagination/dirPagination.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
