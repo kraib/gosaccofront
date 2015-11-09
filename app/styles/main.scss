@@ -748,6 +748,14 @@ body {
     -moz-box-shadow: inset 0 0 1px 1px rgba(255,255,255,0.35),0 2px 1px -1px rgba(0,0,0,0.2);
     box-shadow: inset 0 0 1px 1px rgba(255,255,255,0.35),0 2px 1px -1px rgba(0,0,0,0.2);
 }
+.btn-warning {
+  color: white;
+  background: #fabb3d;
+  border: 1px solid #fabb3d;
+  -webkit-box-shadow: inset 0 0 1px 1px rgba(255,255,255,0.35),0 2px 1px -1px rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 0 0 1px 1px rgba(255,255,255,0.35),0 2px 1px -1px rgba(0,0,0,0.2);
+  box-shadow: inset 0 0 1px 1px rgba(255,255,255,0.35),0 2px 1px -1px rgba(0,0,0,0.2);
+}
 
 .panel.panel-default {
     border: 0px solid #d4d4d4;
@@ -866,4 +874,42 @@ padding:0px !important;
 }
 .paginator{
   text-align: center;
+}
+li.danger.active{
+  border-color: #ff5454 !important;
+}
+li.danger.active a{
+  border-color: #ff5454 !important;
+}
+
+li.active.warning{
+  border-color: #fabb3d !important;
+}
+li.active.warning a{
+  border-color: #fabb3d !important;
+}
+li.active.success{
+  border-color: #79c447 !important;
+}
+li.active.success a{
+  border-color: #79c447 !important;
+}
+
+li.active.primary{
+  border-color: #20a8d8 !important;
+}
+li.active.primary a{
+  border-color: #20a8d8 !important;
+}
+.side-menu .navbar-nav li.active.danger a  {
+  color: #ff5454;
+}
+.side-menu .navbar-nav li.active.primary a  {
+  color: #20a8d8;
+}
+.side-menu .navbar-nav li.active.success a {
+  color: #79c447;
+}
+.side-menu .navbar-nav li.active.warning  a {
+  color: #fabb3d;
 }

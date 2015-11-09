@@ -40,10 +40,10 @@
     <div class="side-menu-container">
         <ul class="nav navbar-nav">
             <li class="{{getActiveClass('/')}}"><a ng-href="#/"><span class="glyphicon glyphicon-home"></span> Home </a></li>
-            <li class="{{getActiveClass('/savings')}}"><a ng-href="#/savings"><span class="glyphicon glyphicon-piggy-bank"></span> My Savings</a></li>
-            <li class="{{getActiveClass('/shares')}}"><a ng-href="#/shares"><span class="glyphicon glyphicon-equalizer"></span> My Shares</a></li>
-            <li class="{{getActiveClass('/loans')}}"><a ng-href="#/loans"><span class="glyphicon glyphicon glyphicon-plane"></span> Loans</a></li>
-            <li class="{{getActiveClass('/notifications')}}"><a ng-href="#/notifications"><span class="glyphicon glyphicon-envelope"></span> Notifications <span class="label label-primary">42</span> </a></li>
+            <li class="success {{getActiveClass('/savings')}}"><a ng-href="#/savings"><span class="glyphicon glyphicon-piggy-bank"></span> My Savings</a></li>
+            <li class="{{getActiveClass('/shares')}} danger"><a ng-href="#/shares"><span class="glyphicon glyphicon-equalizer"></span> My Shares</a></li>
+            <li class="{{getActiveClass('/loans')}} warning"><a ng-href="#/loans"><span class="glyphicon glyphicon glyphicon-plane"></span> Loans</a></li>
+            <li class="{{getActiveClass('/notifications')}} primary"><a ng-href="#/notifications"><span class="glyphicon glyphicon-envelope"></span> Notifications <span class="label label-primary">42</span> </a></li>
       		<li class="{{getActiveClass('/settings')}}"><a ng-href="#/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
           <li ><a href="#/signin"><span class="glyphicon glyphicon-stop"></span> Logout</a></li>
 
