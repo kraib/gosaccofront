@@ -1,0 +1,168 @@
+<div class="container">
+  <div class="row">
+    <!-- uncomment code for absolute positioning tweek see top comment in css -->
+    <!-- <div class="absolute-wrapper"> </div> -->
+    <!-- Menu -->
+
+    <div ng-include="'views/left-nav.html'" ></div>
+    <!-- Main Content -->
+    <div class="container-fluid ">
+      <div class="side-body">
+        <div class="top">
+          <div class="col-lg-12 col-sm-12 col-xs-12 col-xxs-12">
+            <div class="smallstat">
+              <i class="glyphicon glyphicon-piggy-bank warning"></i>
+              <span class="value text-warning">UGX {{loanStatus.amount | number}}</span>
+              <span class="title">Loan</span>
+            </div><!--/.smallstat-->
+          </div>
+          <a  class="btn btn-warning pull-right loans-btn">Apply For Loan</a>
+        </div>
+
+        <div class="col-md-12 loan-app" style="padding: 0px;">
+          <!-- BEGIN Portlet PORTLET-->
+          <div class="portlet">
+            <div class="portlet-title">
+              <div class="caption caption-red">
+                <i class="glyphicon glyphicon-file"></i>
+							<span class="caption-subject bold font-yellow-crusta uppercase">
+							Loan Application Details </span>
+
+              </div>
+              <ul class="nav nav-tabs">
+                <li class="active">
+                  <a data-target="#portlet_tab1" data-toggle="tab">
+                    Securities </a>
+                </li>
+                <li>
+                  <a data-target="#portlet_tab2" data-toggle="tab">
+                    Guarantors</a>
+                </li>
+
+              </ul>
+            </div>
+            <div class="portlet-body">
+              <div class="tab-content">
+                <div class="tab-pane active" id="portlet_tab1">
+
+                  <div class="col-md-8" style="padding-left: 0px">
+                   <span class="title text-danger">Savings</span>
+                    <table class="table table-striped">
+                      <tr ng-repeat="saving in  applicationSavingsSecurities">
+                        <td>{{saving.savings_amount | currency:"Ush ":0 }}</td>
+                        <td>{{saving.savings_type}}</td>
+                        <td><span class="label label-success">approved</span></td>
+                      </tr>
+                      <tr>
+
+
+                       <td>
+                         <input type="text" class="form-control" placeholder="amount" ng-model="savingsSecurity.savings_amount"/>
+                        </td>
+                        <td>
+<select class="form-control" ng-model="savingsSecurity.savings_type">
+  <option value="1">Monthly</option>
+</select>
+                        </td>
+                        <td>
+                          <button type="submit" class="btn btn-danger pull-right loans-btn" ng-click="addSavings(savingsSecurity)">Add </button>
+
+                        </td>
+                      </tr>
+                    </table>
+                    <span class="title text-warning">Shares</span>
+                    <table class="table table-striped">
+                      <tr ng-repeat="shares in applicationSharesSecurities">
+                        <td>{{shares.number_of_shares}} ({{shares.value | currency:""}})</td>
+                        <td>{{shares.share_type}}</td>
+                        <td><span class="label label-success">approved</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <input type="text" class="form-control" name="amount" ng-model="sharesSecurity.number_of_shares" placeholder="number of shares"/>
+                        </td>
+                        <td>
+                          <select class="form-control" name="type" ng-model="sharesSecurity.share_type">
+                            <option value="1">Fixed Deposit</option>
+                          </select>
+                        </td>
+                        <td>
+                          <button type="submit" class="btn btn btn-warning pull-right loans-btn" ng-click="addShares(sharesSecurity)">Add </button>
+
+                        </td>
+                      </tr>
+                    </table>
+                    <span class="title text-success">Articles</span>
+                    <table class="table table-striped">
+                      <tr ng-repeat="article in applicationArticlesSecurities">
+                        <td>{{article.value | currency:"Ush ":0}}</td>
+                        <td>{{article.type}}</td>
+                        <td><span class="label label-success">approved</span></td>
+                      </tr>
+
+
+
+                    </table>
+
+                    </div>
+                  <div class="col-md-4" style="padding-right: 0px">
+                    <div class="testimonials">
+                      <div class="active item">
+                        <blockquote>
+                          <span class="title text-danger">Savings</span>
+                          <table class="table">
+                          <tr ng-repeat="item in userSavings">
+                            <td>{{item.savings_type.name}}</td>
+                            <td>{{item.amount | currency:"Ush "}}</td>
+
+                          </tr>
+                        </table>
+                          <span class="title text-warning">Shares</span>
+
+                          <table class="table">
+                            <tr ng-repeat="item in userShares">
+                              <td>{{item.share_type.share_class}}
+                                </td>
+                              <td>{{item.number_of_shares}} ({{item.share_type.share_price}})
+                                </td>
+                            </tr>
+                          </table>
+
+                          <span class="title text-success">Securities</span>
+
+                          <table class="table">
+                            <tr>
+                              <td>TOTAL VALUE
+                              </td>
+                              <td>Ush 200,000
+                              </td>
+                            </tr>
+                          </table>
+                        </blockquote>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                </div>
+                <div class="tab-pane" id="portlet_tab2">
+                  <h4>Tab 2 Content</h4>
+                  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                </div>
+                <div class="tab-pane" id="portlet_tab3">
+                  <h4>Tab 3 Content</h4>
+                  <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END Portlet PORTLET-->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

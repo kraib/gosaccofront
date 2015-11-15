@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <!-- uncomment code for absolute positioning tweek see top comment in css -->
+    <!-- <div class="absolute-wrapper"> </div> -->
+    <!-- Menu -->
+
+    <div ng-include="'views/left-nav.html'" ></div>
+    <!-- Main Content -->
+    <div class="container-fluid ">
+      <div class="side-body">
+        <div class="top">
+          <div class="col-lg-12 col-sm-12 col-xs-12 col-xxs-12">
+            <div class="smallstat">
+              <i class="glyphicon glyphicon-piggy-bank warning"></i>
+              <span class="value text-warning">UGX {{loanStatus.amount | number}}</span>
+              <span class="title">Loan</span>
+            </div><!--/.smallstat-->
+          </div>
+          <a  class="btn btn-warning pull-right loans-btn">Apply For Loan</a>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2></span>Loan Application</h2>
+            <div class="panel-actions">
+              <a href="#/" class="btn-setting"><i class="fa fa-wrench"></i></a>
+              <a href="#/" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+              <a href="#/" class="btn-close"><i class="fa fa-times"></i></a>
+            </div>
+          </div>
+          <div class="panel-body">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Ap Number</th>
+                <th>Loan Type</th>
+                <th>Amount</th>
+                <th>Approval Date</th>
+                <th>Status</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr dir-paginate="item in loanApplications| itemsPerPage:5">
+                <td><a href="#/loanApplicationSingle/{{item.id}}">TNX# {{item.application_number}}</a></td>
+                <td>{{item.loan_type}}</td>
+                <td>{{item.amount | currency:"Ush ":0 }}</td>
+                <td>{{item.application_date| date:"MMM-dd-yyyy"}}</td>
+                <td>
+                  <span class="label label-success">completed</span>
+                </td>
+              </tr>
+
+              </tbody>
+            </table>
+
+            <div class="paginator">
+              <dir-pagination-controls boundary-links="true"></dir-pagination-controls>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

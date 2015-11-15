@@ -15,7 +15,7 @@ angular.module('gosaccov1App')
 
   	});
 
-    console.log($location.path());
+    //console.log($location.path());
     $scope.getActiveClass=function(route){
 
       if($location.path()==route)

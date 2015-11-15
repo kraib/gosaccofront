@@ -40,6 +40,7 @@ module.exports = function(config) {
       'bower_components/angular-ui-notification/dist/angular-ui-notification.min.js',
       'bower_components/ng-dialog/js/ngDialog.js',
       'bower_components/angularUtils-pagination/dirPagination.js',
+      'bower_components/angular-bootstrap-show-errors/src/showErrors.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

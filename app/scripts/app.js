@@ -22,7 +22,8 @@ angular
     'chart.js',
     'ui-notification',
     'ngDialog',
-    'angularUtils.directives.dirPagination'
+    'angularUtils.directives.dirPagination',
+    'ui.bootstrap.showErrors'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -80,6 +81,24 @@ angular
         controllerAs: 'notifications',
         access: { requiresLogin: true }
       })
+      .when('/loans/applications/create', {
+        templateUrl: 'views/loanapplicationform.html',
+        controller: 'LoanapplicationformCtrl',
+        controllerAs: 'loanApplicationForm',
+        access: { requiresLogin: true }
+      })
+      .when('/loans/applications', {
+        templateUrl: 'views/loanapplicationlist.html',
+        controller: 'LoanapplicationlistCtrl',
+        controllerAs: 'loanApplicationList',
+        access: { requiresLogin: true }
+      })
+      .when('/loans/applications/:appId', {
+        templateUrl: 'views/loanapplicationsingle.html',
+        controller: 'LoanapplicationsingleCtrl',
+        controllerAs: 'loanApplicationSingle',
+        access: { requiresLogin: true }
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -96,21 +115,24 @@ angular
   .run(function(RouteAccessFilter,$rootScope,$location,Application,Authentication){
      $rootScope.$on('$routeChangeStart', function(scope, next ,current){
       //check if hass access
+      try{
+         if(!RouteAccessFilter.checkAccess(next.access))
+          {
 
-       if(!RouteAccessFilter.checkAccess(next.access))
-      {
+             $location.path('signin');
+          }
 
-        $location.path('signin');
-      }
+        }
+       catch(e){
 
-
+       }
 
 
      });
 
      $rootScope.$on('loggedIn',function(){
       Authentication.getUser().then(function(user){
-        console.log(angular.toJson(user));
+        //console.log(angular.toJson(user));
         Application.makeReady();
 
       },function(){
