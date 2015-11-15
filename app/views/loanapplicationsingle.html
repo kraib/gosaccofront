@@ -16,7 +16,7 @@
               <span class="title">Loan</span>
             </div><!--/.smallstat-->
           </div>
-          <a  class="btn btn-warning pull-right loans-btn">Apply For Loan</a>
+          <a  href="#/loans/applications/create" class="btn btn-warning pull-right loans-btn">Apply For Loan</a>
         </div>
 
         <div class="col-md-12 loan-app" style="padding: 0px;">
@@ -93,12 +93,12 @@
                         </td>
                       </tr>
                     </table>
-                    <span class="title text-success">Articles</span>
+                    <span class="title text-success">Articles  <button style="margin-right: 20px;" type="submit" class="btn btn btn-success pull-right loans-btn" data-toggle="modal" data-target="#myModal">Add</button></span>
                     <table class="table table-striped">
                       <tr ng-repeat="article in applicationArticlesSecurities">
-                        <td>{{article.value | currency:"Ush ":0}}</td>
-                        <td>{{article.type}}</td>
-                        <td><span class="label label-success">approved</span></td>
+                        <td style="width: 47%">{{article.value | currency:"Ush ":0}}</td>
+                        <td style="width: 31%">{{article.type}}</td>
+                        <td><span class="label label-success ">approved</span></td>
                       </tr>
 
 
@@ -149,19 +149,90 @@
 
                 </div>
                 <div class="tab-pane" id="portlet_tab2">
-                  <h4>Tab 2 Content</h4>
-                  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-                </div>
-                <div class="tab-pane" id="portlet_tab3">
-                  <h4>Tab 3 Content</h4>
-                  <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-                </div>
+
+
+                  <table class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Value</th>
+                      <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tr ng-repeat="item in applicationGuarators">
+                      <td>#LG {{item.id}}</td>
+                      <td>{{item.value| currency:"Ush " }}</td>
+                      <td>{{item.description}}</td>
+                    </tr>
+                  </table>
+
+                                </div>
+
               </div>
             </div>
           </div>
           <!-- END Portlet PORTLET-->
         </div>
 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Assets </h4>
+      </div>
+      <div class="modal-body">
+        <form name="loanForm">
+          <div class="row">
+
+            <div class="col-md-12 form-group" show-errors>
+              <label for="name">Name</label>
+              <input ng-model="articleSecurity.name" id="name" name="name" type="text" class="form-control" placeholder="name" required></div>
+
+          </div>
+
+          <div class="row">
+          <div class="col-md-6 form-group" show-errors>
+            <label for="name">Value</label>
+            <input type="number" name="value"ng-model="articleSecurity.value" class="form-control" placeholder="value" required>
+          </div>
+
+            <div class="col-md-6 form-group" show-errors>
+              <label for="name">Type</label>
+              <select ng-model="articleSecurity.type" class="form-control" name="type" required>
+              <option>Land</option>
+              <option>House</option>
+              <option>Car</option>
+            </select>
+            </div>
+            </div>
+
+          <div class="row">
+            <div class="col-md-6 form-group" show-errors>
+              <label>identification type</label>
+              <input type="text" name="id_type" ng-model="articleSecurity.identification_type" class="form-control" placeholder="identification type" required>
+            </div>
+            <div class="col-md-6 form-group" show-errors>
+              <label>identification</label>
+              <input type="text" name="id" ng-model="articleSecurity.identification" class="form-control" placeholder="identification number" required></div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group" show-errors>
+              <label>description</label>
+              <textarea  name="description" ng-model="articleSecurity.description" class="form-control" placeholder="Description" required></textarea></div>
+
+          </div>
+</form>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" ng-click="addArticle(articleSecurity)">Add Asset</button>
       </div>
     </div>
   </div>

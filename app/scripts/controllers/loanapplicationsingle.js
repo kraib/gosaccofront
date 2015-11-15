@@ -16,6 +16,10 @@ angular.module('gosaccov1App')
 
     });
 
+    //get loan gaurantors
+    loans.getApplicationGuarantor($routeParams.appId).then(function(data){
+      $scope.applicationGuarators=data;
+    });
     loans.getApplicationSavingsSecurities($routeParams.appId).then(function(data){
       $scope.applicationSavingsSecurities=data;
     });
@@ -106,6 +110,25 @@ angular.module('gosaccov1App')
       }
 
       return false;
+    }
+
+
+    $scope.addArticle = function(article){
+
+      $scope.$broadcast('show-errors-check-validity');
+      if ($scope.loanForm.$valid) {
+        article.loan_application=$routeParams.appId;
+        loans.postApplicationArticlesSecurites(article).then(function (data) {
+          $scope.articleSecurity = {};
+          $('#myModal').modal('hide');
+
+          $scope. applicationArticlesSecurities.push({value: article.value, type: article.type});
+
+          Notification.success({message: "Security Was Added Successfully", title: 'Security Added'});
+        }).catch(function (error) {
+          Notification.error({message: "An Error Occured", title: 'Error'});
+        })
+      }
     }
 
       });

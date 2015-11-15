@@ -99,6 +99,26 @@ angular.module('gosaccov1App')
         return deferred.promise;
 
       },
+      getApplicationGuarantor:function (applicationId){
+      var deferred =$q.defer();
+
+      $http.get(WebServer.url+'/members/'+userid+'/loans/securities/guarantors').then(function(data){
+
+        deferred.resolve(getValuesByloanApplicationId(applicationId,data.data));
+
+      },function(error){
+        deferred.reject("Error");
+      })
+
+      return deferred.promise;
+
+      },
+      postApplicationGuarantors:function(guarantor){
+        return $http.post(WebServer.url+'/members/'+userid+'/loans/securities/guarantors',guarantor);
+      },
+      postApplicationArticlesSecurites:function(article){
+        return $http.post(WebServer.url+'/members/'+userid+'/loans/securities/articles',article);
+      },
       getApplicationArticlesSecurities:function (applicationId){
         var deferred =$q.defer();
 

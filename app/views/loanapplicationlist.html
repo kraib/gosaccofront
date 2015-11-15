@@ -16,7 +16,7 @@
               <span class="title">Loan</span>
             </div><!--/.smallstat-->
           </div>
-          <a  class="btn btn-warning pull-right loans-btn">Apply For Loan</a>
+          <a  href="#/loans/applications/create" class="btn btn-warning pull-right loans-btn">Apply For Loan</a>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -40,7 +40,7 @@
               </thead>
               <tbody>
               <tr dir-paginate="item in loanApplications| itemsPerPage:5">
-                <td><a href="#/loanApplicationSingle/{{item.id}}">TNX# {{item.application_number}}</a></td>
+                <td><a href="#/loans/applications/{{item.id}}">TNX# {{item.application_number}}</a></td>
                 <td>{{item.loan_type}}</td>
                 <td>{{item.amount | currency:"Ush ":0 }}</td>
                 <td>{{item.application_date| date:"MMM-dd-yyyy"}}</td>
